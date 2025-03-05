@@ -23,7 +23,7 @@
 
 - name: import tasks from commom roles
   ansible.builtin.import_role:
-    name: commom
+    name: common
     tasks_from: app-pre-re
 
 - name: installing dependencies
