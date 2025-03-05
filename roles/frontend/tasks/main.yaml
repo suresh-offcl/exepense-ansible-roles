@@ -14,21 +14,6 @@
     name: common
     tasks_from: app-pre-re
 
-- name: Remove default Nginx/Apache content
-  ansible.builtin.file:
-    path: /usr/share/nginx/html  # Change to /var/www/html for Apache
-    state: absent
-
-- name: Create an empty directory to avoid errors
-  ansible.builtin.file:
-    path: /usr/share/nginx/html  # Change to /var/www/html for Apache
-    state: directory
-    
-- name: Download a frontend code
-  ansible.builtin.get_url:
-    url: "https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip"
-    dest: "/tmp/frontend.zip"
-
 - name: Unzip a file
   ansible.builtin.unarchive:
     src: /tmp/frontend.zip  
