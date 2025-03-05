@@ -9,6 +9,14 @@
     name: nodejs
     state: present 
 
+- name: Install required Python packages
+  ansible.builtin.pip:
+    name:
+      - pymysql
+      - cryptography
+    state: present
+    executable: pip3.9
+
 - name: adding user
   ansible.builtin.user:
     name: expense
