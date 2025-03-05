@@ -8,6 +8,14 @@
     name: mysqld
     enabled: yes
 
+- name: Install required Python packages
+  ansible.builtin.pip:
+    name:
+      - pymysql
+      - cryptography
+    state: present
+    executable: pip3.9
+
 - name: Start MySQL service
   ansible.builtin.systemd:
     name: mysqld
