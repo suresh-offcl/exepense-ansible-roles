@@ -1,1 +1,5 @@
 db_host:  backend.khanishkcosmetics.store
+
+app_location: "/usr/share/nginx/html"
+
+component: "frontend"

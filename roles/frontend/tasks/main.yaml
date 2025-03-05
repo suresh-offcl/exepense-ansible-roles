@@ -9,6 +9,11 @@
     enabled: yes
     state: started
 
+- name: importing files from another role common
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: app-pre-re
+
 - name: Remove default Nginx/Apache content
   ansible.builtin.file:
     path: /usr/share/nginx/html  # Change to /var/www/html for Apache
