@@ -52,6 +52,21 @@
     src: backend.service.j2
     dest: /etc/systemd/system/backend.service
 
+- name: Install MySQL
+  hosts: mysql
+  become: yes
+  tasks:
+  - name: Install MySQL Server
+    ansible.builtin.package:
+      name: mysql-server
+      state: present
+  
+  - name: Start MySQL
+    ansible.builtin.systemd:
+      name: mysql
+      state: started
+      enabled: yes
+
 - name: Import schema into MySQL
   community.mysql.mysql_db:
     login_user: root
