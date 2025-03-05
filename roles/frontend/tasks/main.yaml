@@ -13,12 +13,7 @@
   ansible.builtin.import_role:
     name: common
     tasks_from: app-pre-r
-
-- name: Unzip a file
-  ansible.builtin.unarchive:
-    src: /tmp/frontend.zip  
-    dest: /usr/share/nginx/html  
-    remote_src: yes 
+ 
 
 - name: Copy directory from local to remote
   ansible.builtin.template:
