@@ -40,4 +40,4 @@
 # - name: Restart Nginx service
 #   ansible.builtin.systemd:
 #     name: nginx
-#     state: restarted
+#     state: restarted 
